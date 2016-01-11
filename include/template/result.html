@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="page-header">
+    <h3 ng-show="weatherResult.city.name.length != undefinded" ng-cloak>Weather for {{ weatherResult.city.name }}</h3>
+    <h3 ng-show="weatherResult.city.name == undefinded">Can not find such city.</h3>
+  </div>
+
+  <!-- <p ng-repeat="w in weatherResult.list">{{ w.dt }}<br>
+    {{ w.temp }}
+  </p> -->
+
+  <!-- <p>{{ K2C(280) }}</p> -->
+  <ul class="nav nav-tabs">
+    <li role="presentation" ng-class="{ 'active': dlimit === '2' }"><a href="#/result/2">Daily</a></li>
+    <li role="presentation" ng-class="{ 'active': dlimit === '7' }"><a href="#/result/7">Weekly</a></li>
+  </ul>
+  <hr/>
+
+  <div class="well well-lg">
+    <daily-weather-result ng-repeat="w in weatherResult.list" daily-weather="w" ng-show="$index < dlimit" k-to-c="K2C(degK)" to-date="convert2Date(sec)">
+    </daily-weather-result>
+  </div>
+
+</div>

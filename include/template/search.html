@@ -1,0 +1,12 @@
+<div class="jumbotron">
+  <div class="container">
+        <h2>Enter city name</h2>
+        <form class="form-inline" ng-submit="onSubmit()">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="city name" ng-model="cityName" id="cityName">
+            <input type="submit" class="btn btn-primary" value="Submit" ng-disabled="cityName.length == 0">
+          </div>
+        </form>
+    </div>
+  </div>
+</div>

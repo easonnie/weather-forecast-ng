@@ -1,0 +1,23 @@
+<div class="panel panel-default">
+  <div class="panel-heading">{{ toDate({ sec: dailyWeather.dt}) | date: 'yyyy-MM-dd hh:mm:ss' }}</div>
+  <div class="panel-body">
+    <table class="table table-condensed">
+      <tr>
+        <th>Day</th>
+        <th>Min</th>
+        <th>Max</th>
+        <th>Night</th>
+        <th>Eve</th>
+        <th>Morn</th>
+      </tr>
+      <tr>
+        <td>{{ kToC({ degK: dailyWeather.temp.day }) }} &#8451</td>
+        <td>{{ kToC({ degK: dailyWeather.temp.min }) }} &#8451</td>
+        <td>{{ kToC({ degK: dailyWeather.temp.max }) }} &#8451</td>
+        <td>{{ kToC({ degK: dailyWeather.temp.night }) }} &#8451</td>
+        <td>{{ kToC({ degK: dailyWeather.temp.eve }) }} &#8451</td>
+        <td>{{ kToC({ degK: dailyWeather.temp.morn }) }} &#8451</td>
+      </tr>
+    </table>
+  </div>
+</div>
